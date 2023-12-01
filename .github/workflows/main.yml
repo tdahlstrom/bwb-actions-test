@@ -10,7 +10,7 @@ jobs:
           image: biodepot/bwb
           options: --privileged --group-add root
           run: |
-              pwd
+              if [ -f ../startup.sh ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
               # apt-get -y install git-all
               # git config --global user.email "action@github.com"
               # git config --global user.name "GitHub Action"
