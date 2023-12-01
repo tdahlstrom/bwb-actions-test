@@ -11,7 +11,7 @@ jobs:
           options: --privileged --group-add root
           run: |
               ls > a.out
-              apt-get -y install git
+              apt-get -y install git-all
               git config --global user.email "action@github.com"
               git config --global user.name "GitHub Action"
               git add a.out
