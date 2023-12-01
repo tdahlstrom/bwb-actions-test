@@ -10,7 +10,7 @@ jobs:
           image: biodepot/bwb
           options: --privileged --group-add root
           run: |
-              ls -al
+              pwd
               # apt-get -y install git-all
               # git config --global user.email "action@github.com"
               # git config --global user.name "GitHub Action"
