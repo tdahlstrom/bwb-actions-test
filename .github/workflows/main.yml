@@ -11,4 +11,4 @@ jobs:
           options: --privileged --group-add root
           run: |
               # if [ -f ../startup.sh ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
-              if [ -f startup.sh ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
+              if [ -f ./startup.sh ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
