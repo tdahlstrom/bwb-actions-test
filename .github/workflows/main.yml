@@ -4,13 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run the Bwb
+      - name: Run Bwb
         uses: addnab/docker-run-action@v3
         with:
           image: biodepot/bwb
           options: --privileged --group-add root
           run: |
               ls > a.out
+              sudo apt-get -y install git
               git config --global user.email "action@github.com"
               git config --global user.name "GitHub Action"
               git add a.out
