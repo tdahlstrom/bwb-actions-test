@@ -1,0 +1,16 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run the Bwb
+        uses: addnab/docker-run-action@v3
+        with:
+          image: biodepot/bwb
+          options: --privileged --group-add root
+          run: |
+              ls > a.out
+              git config --global user.email "action@github.com"
+              git config --global user.name "GitHub Action"
+              git add a.out
+              git commit -m "Added output of home directory."
+              git push
