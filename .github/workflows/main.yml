@@ -7,7 +7,7 @@ jobs:
       - name: Run Bwb
         uses: addnab/docker-run-action@v3
         with:
-          image: biodepot/bwb
+          image: biodepot/bwb:latest
           options: --privileged --group-add root
           run: |
               if [ -f ../startup.sh ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
