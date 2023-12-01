@@ -11,9 +11,10 @@ jobs:
           options: --privileged --group-add root
           run: |
               ls > a.out
-              apt-get -y install git-all
-              git config --global user.email "action@github.com"
-              git config --global user.name "GitHub Action"
-              git add a.out
-              git commit -m "Added output of home directory."
-              git push
+              apt-cache search git
+              # apt-get -y install git-all
+              # git config --global user.email "action@github.com"
+              # git config --global user.name "GitHub Action"
+              # git add a.out
+              # git commit -m "Added output of home directory."
+              # git push
