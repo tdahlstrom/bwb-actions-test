@@ -11,9 +11,3 @@ jobs:
           options: --privileged --group-add root
           run: |
               if [ -f ../startup.sh ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
-              # apt-get -y install git-all
-              # git config --global user.email "action@github.com"
-              # git config --global user.name "GitHub Action"
-              # git add a.out
-              # git commit -m "Added output of home directory."
-              # git push
