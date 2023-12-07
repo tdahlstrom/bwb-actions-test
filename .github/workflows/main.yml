@@ -7,4 +7,4 @@ jobs:
       image: biodepot/bwb:latest
     steps:
       - name: test steps
-        run: docker ps --format "{{.Names}}"
+        run: docker top $(docker ps --format "{{.Names}}") | grep orange-canvas
