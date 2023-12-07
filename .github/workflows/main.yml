@@ -11,5 +11,6 @@ jobs:
           options: -p 6080:6080 --privileged --group-add root -v /tmp/.X11-unix:/tmp/.X11-unix -v /var/run/docker.sock:/var/run/docker.sock
           run: |
               bash ../startup.sh
-              sleep 10
+              sleep 5
               docker ps
+              docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}'
