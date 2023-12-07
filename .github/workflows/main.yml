@@ -9,7 +9,6 @@ jobs:
         with:
           image: biodepot/bwb:latest
           options: --privileged --group-add root
-          - name: Try running startup.sh
-            run: bash ../startup.sh
-          - name: docker ps
-            run: docker top $(docker ps --format "{{.Names}}")
+          run: |
+              bash ../startup.sh
+              docker top $(docker ps --format "{{.Names}}")
