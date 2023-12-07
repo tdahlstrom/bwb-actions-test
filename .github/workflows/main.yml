@@ -8,6 +8,6 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: biodepot/bwb:latest
-          options: --privileged --group-add root
+          options: --privileged --group-add root --name bwb
           run: |
-              echo `docker ps`
+              echo `docker top bwb | grep orange-canvas`
