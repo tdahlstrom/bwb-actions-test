@@ -8,7 +8,6 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: biodepot/bwb:latest
-          options: --privileged --group-add root -v /tmp/.X11-unix:/tmp/.X11-unix
+          options: --privileged --group-add root -v /tmp/.X11-unix:/tmp/.X11-unix -v /var/run/docker.sock:/var/run/docker.sock
           run: |
-              bash ../startup.sh
               ps -ef
