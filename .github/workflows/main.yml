@@ -13,4 +13,4 @@ jobs:
               bash ../startup.sh
               sleep 5
               docker ps
-              docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}'
+              docker top $(docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}')
