@@ -10,4 +10,4 @@ jobs:
           image: biodepot/bwb:latest
           options: --privileged --group-add root
           run: |
-              echo `ps -ef`
+              echo `docker ps`
