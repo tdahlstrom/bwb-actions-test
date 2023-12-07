@@ -1,13 +1,10 @@
-on:
-  push:
+on: push
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    container:
+      image: biodepot/bwb:latest
     steps:
-      - name: Run Bwb
-        uses: addnab/docker-run-action@v3
-        with:
-          image: biodepot/bwb:latest
-          options: --privileged --group-add root --name bwb
-          run: |
-              echo `docker top bwb`
+      - name: test steps
+        run: docker ps
