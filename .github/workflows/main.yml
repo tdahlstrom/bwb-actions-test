@@ -10,7 +10,4 @@ jobs:
           image: biodepot/bwb:latest
           options: --privileged --group-add root
           run: |
-              # if [ `ps -ef | grep orange-canvas | grep -v "grep" | wc -l` == "1" ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
-              sleep 10
-              # echo `ps -ef | grep orange-canvas | grep -v "grep" | wc -l`
               echo `ps -ef`
