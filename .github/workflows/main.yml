@@ -10,3 +10,5 @@ jobs:
         run: docker ps --format "{{.Names}}"
       - name: Check for processes on biodepot/bwb:latest container.
         run: docker top $(docker ps --format "{{.Names}}")
+      - name: Check for processes on container.
+        run: ps -ef
