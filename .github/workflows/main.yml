@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: biodepot/bwb:latest
-      options: --privileged --group-add root
+      options: --privileged --group-add root --entrypoint /bin/bash
     steps:
       - name: List all names of containers.
         run: docker ps
