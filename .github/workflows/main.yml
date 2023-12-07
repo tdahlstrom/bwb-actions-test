@@ -6,5 +6,7 @@ jobs:
     container:
       image: biodepot/bwb:latest
     steps:
-      - name: test steps
+      - name: Check for name of biodepot/bwb:lastest container.
+        run: docker ps --format "{{.Names}}"
+      - name: Check for processes on biodepot/bwb:latest container.
         run: docker top $(docker ps --format "{{.Names}}")
