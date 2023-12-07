@@ -14,3 +14,5 @@ jobs:
               sleep 5
               docker ps
               docker top $(docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}')
+              ls -al /root/.fluxbox
+              ls /orange3/Orange/canvas/icons/
