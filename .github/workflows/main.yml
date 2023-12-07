@@ -7,13 +7,7 @@ jobs:
       image: biodepot/bwb:latest
       options: --privileged --group-add root --entrypoint /bin/bash
     steps:
-      - name: Try running startup.sh.
-        run: bash ../startup.sh
-      - name: List all names of containers.
-        run: docker ps
-      - name: Check for name of biodepot/bwb:lastest container.
-        run: docker ps --format "{{.Names}}"
-      - name: Check for processes on biodepot/bwb:latest container.
-        run: docker top $(docker ps --format "{{.Names}}")
-      - name: Check for processes on container.
-        run: ps -ef
+      - name: ls
+        run: ls
+      - name: ls ..
+        run: ls ..
