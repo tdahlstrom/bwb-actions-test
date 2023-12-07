@@ -11,3 +11,4 @@ jobs:
           options: --privileged --group-add root -v /tmp/.X11-unix:/tmp/.X11-unix
           run: |
               bash ../startup.sh
+              ps -ef
