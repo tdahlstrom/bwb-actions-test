@@ -11,5 +11,5 @@ jobs:
           options: --rm -p 6080:6080 --privileged --group-add root -v /tmp/.X11-unix:/tmp/.X11-unix -v /var/run/docker.sock:/var/run/docker.sock
           run: |
               (/startup.sh && /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf) &
-              sleep 10
-              docker top $(docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}' | grep orange-canvas
+              sleep 5
+              docker top $(docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}') | grep orange-canvas
