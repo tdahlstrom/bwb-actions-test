@@ -12,4 +12,4 @@ jobs:
           run: |
               (/startup.sh && /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf) &
               sleep 5
-              if [ `docker top $(docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}') | grep orange-canvas | grep -v "grep" | wc -l` == 2 ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
+              if [ `docker top $(docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}') | grep orange-canvas | grep -v "grep" | wc -l` == 1 ] ; then echo "Bwb successfully launched." ; else exit 1 ; fi
