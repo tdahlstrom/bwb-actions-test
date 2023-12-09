@@ -10,9 +10,6 @@ jobs:
           image: biodepot/bwb:latest
           options: --rm -p 6080:6080 --privileged --group-add root -v /tmp/.X11-unix:/tmp/.X11-unix -v /var/run/docker.sock:/var/run/docker.sock
           run: |
-              bash ../startup.sh
+              bash /startup.sh && /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
               sleep 5
-              docker ps
-              docker top $(docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}')
-              ls -al /root/.fluxbox
-              ls /orange3/Orange/canvas/icons/
+              docker top $(docker ps --filter ancestor=biodepot/bwb --format '{{.Names}}' | grep orange-canvas
